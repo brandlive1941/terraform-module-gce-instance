@@ -24,6 +24,12 @@ variable "name" {
   type        = string
 }
 
+variable "create_dns_record" {
+  description = "Create external DNS record for the instance"
+  type        = bool
+  default     = false
+}
+
 variable "domain" {
   description = "Domain name used to create DNS records"
   type        = string

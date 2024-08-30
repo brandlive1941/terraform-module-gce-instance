@@ -88,7 +88,7 @@ data "route53_zone" "default" {
 }
 
 resource "route53_record" "instance" {
-
+  count   = var.create_dns_record ? 1 : 0
   zone_id = data.route53_zone.default.zone_id
   name    = var.name
   type    = "A"
